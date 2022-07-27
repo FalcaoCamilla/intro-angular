@@ -1,0 +1,37 @@
+h1{
+    text-align: center
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#name{
+    margin-bottom: 8px;
+    width: 200px;
+    line-height: 2.5rem;
+    border-style: none;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#submeter{
+    width: 100px;
+    border-radius: 10px;
+    line-height: 1.8rem;
+    border-style: none;
+    box-shadow: 1px 1px 10px rgb(68, 68, 68);
+}
+
+label{
+    margin-bottom: 3px;
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+}
+
+.msg{
+    text-align: center;
+    font-size: 40px;
+}
