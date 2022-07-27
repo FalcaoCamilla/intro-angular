@@ -16,7 +16,7 @@ export class SaudacaoComponent implements OnInit {
   }
 
   saudarUser(n: string){
-    this.mensagem= `Seja bem-vindo, ${n}`;
+    this.mensagem= `Seja bem vindo, ${n}`;
   }
 
 }
