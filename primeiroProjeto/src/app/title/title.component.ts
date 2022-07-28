@@ -9,15 +9,12 @@ export class TitleComponent implements OnInit, OnChanges {
 
   @Input() public title:string = "Bem-vindo";
 
-  constructor() {
+  constructor() {}
 
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {} //o ngOnInit inicia o componente, independente de tudo
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Alterado com sucesso!")
+    console.log("Alterado com sucesso!") //invocado quando há um dado externo
   }
 
 }
