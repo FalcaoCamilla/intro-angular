@@ -1,0 +1,26 @@
+{{nome}}
+<br>
+{{nome == "Camila"}}
+<br>
+<h2>Property Binding</h2>
+<button [disabled]="true">Button Disabled</button>
+<button [disabled]="checkedDisabled">Button checkedDisabled</button>
+<br>
+<br>
+<img [src]="imgSrc" [alt]="altImg">
+<br>
+<br>
+<h2>Event Binding</h2>
+<button (click)="alertaInfo('valor')">Evento de alerta</button>
+<br>
+<br>
+<button (click)="alertaInfo2($event)">Lista de eventos</button>
+<br>
+<div (mousemove)="mouseMove($event)" style="background-color: antiquewhite; width: 300px; height: 300px;"></div>
+{{position.x}} - {{position.y}}
+<br>
+<br>
+<h2>Two-way Data Binding</h2>
+<br>
+<input [(ngModel)]="nome">
+{{nome}}
