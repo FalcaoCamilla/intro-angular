@@ -1,9 +1,36 @@
+<ng-content select="h1">
+    
+</ng-content>
+
+<div *ngIf= "nome != 'Parar'">
+    <hr>
+    <h2>*ngClass</h2>
+    <p [ngClass]="{'active': valor, 'disabled': !valor}">NgClass</p>
+    <!--validações com classes-->
+    <br>
+    <hr>
+    <h2>*ngStyle</h2>
+    <p [ngStyle]="{'height': height, 'background': bgColor}">NgStyle</p>
+    <!--deve adicionar um estilo diretamente na linha-->
+</div>
 <hr>
-<h2>*ngClass</h2>
-<p [ngClass]="{'active': valor, 'disabled': !valor}">NgClass</p>
-<!--validações com classes-->
+<input [(ngModel)]="nome">
+<button (click)="salvar()">Salvar</button>
+<li *ngFor="let item of list; let i = index">
+    {{item.nome | lowercase}}
+</li>
+<br>
+<br>
 <br>
 <hr>
-<h2>*ngStyle</h2>
-<p [ngStyle]="{'height': height, 'background': bgColor}">NgStyle</p>
-<!--deve adicionar um estilo diretamente na linha-->
+<ng-template ngFor let-item [ngForOf]="list">
+    <p>
+        {{item.nome}}
+    </p>
+</ng-template>
+<br>
+<br>
+<br>
+<hr>
+<h2>Pipe</h2>
+{{date | date: 'dd/MM/yyyy'}}

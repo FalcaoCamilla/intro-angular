@@ -11,6 +11,11 @@ export class DiretivasAtributosComponent implements OnInit {
   public height: string = "20px";
   public bgColor: string = "pink";
 
+  public nome: string = "";
+  public list: Array<{nome: string}> = [];
+
+  public date:Date = new Date();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -30,6 +35,11 @@ export class DiretivasAtributosComponent implements OnInit {
         this.bgColor = "rgb(250, 231, 194)";
       }
     }, 2000)
+  }
+
+  public salvar(){
+    this.list.push({nome: this.nome}); //o array recebe o nome digitado no input
+    this.nome=""; //zera o input
   }
 
 }
