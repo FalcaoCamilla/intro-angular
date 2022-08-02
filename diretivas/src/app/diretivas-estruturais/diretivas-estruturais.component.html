@@ -1,0 +1,73 @@
+<h2>*ngIF</h2>
+<p *ngIf="condition; else elseBlock">
+    True
+</p> 
+<!--
+    o texto só aparecerá se a condition receber true,
+     caso contrário, será exibido elseBlock
+-->
+<ng-template #elseBlock>
+    <p>
+        False
+    </p>
+</ng-template>
+
+<hr>
+
+<p *ngIf="conditionClick; else elseBlock">
+    True
+</p>
+<!--
+    o texto só aparecerá se a conditionClick receber true,
+     caso contrário, será exibido elseBlock
+-->
+
+<p *ngIg="!conditionClick">
+    False
+</p>
+
+
+<button (click)="onClick()">Clicar</button>
+
+<br>
+<br>
+<hr>
+
+<h2>*ngFor</h2>
+<ul>
+    <li *ngFor="let item of list; let i = index;" (click)="onClickEventList(i)"> 
+        <!--
+            ngFor percorre a lista, pega o índice de cada elemento e
+            quando um item é clicado chama o evento que recebe o
+            índice como parametro
+        -->
+       {{i}}.) Nome: {{item.nome}} 
+        <br>
+        Idade: {{item.idade}} anos
+    </li>
+</ul>
+
+<button (click)="onClickAddList()">Add</button>
+
+<br>
+<br>
+<hr>
+
+<h2>*ngSwitch</h2>
+
+<input type="text" [(ngModel)]="nome"> 
+<!--
+    o ngModel dispara eventos para atualizar a sua variável 
+    no componente, por meio de fluxo bidirecional.
+    os colchetes representam o bind, o valor do .ts que é usado no html
+    o parentêses representa o evento no html, que dispara comportamento no .ts
+-->
+
+<div [ngSwitch]="nome">
+    <p *ngSwitchCase="'Camilla'">
+        Camilla
+    </p>
+    <p *ngSwitchDefault>
+        Erro na busca
+    </p>
+</div>
