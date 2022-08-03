@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   <h1>Aula de Diretivas de Atributo</h1>
   </app-diretivas-atributos>
   <app-new-component></app-new-component>
+  <app-input [contador]="addValue"></app-input>
   <router-outlet></router-outlet>`
 })
 export class AppComponent implements OnInit {
 title='diretivas estruturais'
+
+public addValue: number = 10;
 
 ngOnInit(): void{
 
