@@ -10,6 +10,8 @@ export class FoodListComponent implements OnInit {
 
   public foodList: Array<string>=[];
 
+//let list = new FoodListService();
+//this.foodList = list.foodList()
   constructor(private foodListService: FoodListService) { }
 
   ngOnInit(): void {
