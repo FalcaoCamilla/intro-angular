@@ -13,10 +13,16 @@ export class FoodListService {
     "Cheddar"
   ];
 
+  private url: string = "http://localhost:3000/list-food"
+
   constructor() { }
 
+  // public foodList(){
+  //   return this.list;
+  // }
+
   public foodList(){
-    return this.list;
+    return
   }
 
   public foodListAdd(value: string){
