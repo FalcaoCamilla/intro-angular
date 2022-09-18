@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+type NewType = Observable;
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +17,16 @@ export class FoodListService {
     "Cheddar"
   ];
 
-  private url: string = "http://localhost:3000/list-food"
+  private url: string = "http://localhost:3000/"
 
-  constructor() { }
+  constructor(private http: HttpClient ) { }
 
   // public foodList(){
   //   return this.list;
   // }
 
-  public foodList(){
-    return
+  public foodList(): NewType{
+    return this.http.get(this.url + "list-food")
   }
 
   public foodListAdd(value: string){
