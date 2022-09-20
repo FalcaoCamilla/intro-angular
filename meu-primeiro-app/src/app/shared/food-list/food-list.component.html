@@ -1,3 +1,4 @@
 <li *ngFor="let item of foodList"> <!--foodList está declarado no food-list.component.ts-->
-    [{{item.id}}] - {{item.nome}}
+    [{{item.id}}] - {{item.nome}} 
+    <button (click)="foodListDelete(item.id)">Deletar</button>
 </li>
