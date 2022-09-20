@@ -22,7 +22,10 @@ export class FoodListComponent implements OnInit {
     );
 
     this.foodListService.emitEvent.subscribe(
-      res => alert(`Você adicionou um item => ${res}`)
+      res => {
+        alert(`Você adicionou um item => ${res.nome}`);
+        return this.foodList.push(res);
+      }
     )
   }
 
