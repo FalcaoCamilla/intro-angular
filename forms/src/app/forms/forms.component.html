@@ -1,8 +1,8 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
     <label>
         Nome:
         <input type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" required>
-        <span *ngIf="nome.valid && (nome.dirty && nome.touched)">
+        <span *ngIf="!nome.valid && (nome.dirty && nome.touched)">
             Invalid
         </span>
     </label>
@@ -64,6 +64,11 @@
     <br>
     <br>
 
+    <button [disabled]="form.invalid">Enviar Dados</button>
+
 </form>
+
+<br>
+<br>
 
 {{form.value | json }}

@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { OnInit } from '@angular/core'
+import { NgForm } from '@angular/forms';
 import { Comidas } from '../model/comidas';
 
 @Component({
@@ -19,5 +20,7 @@ export class FormsComponent implements OnInit {
 
   constructor() { }
 
-
+  public submitForm(form: NgForm){
+    console.log(form.value)
+  }
 }
