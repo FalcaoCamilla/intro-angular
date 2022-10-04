@@ -1,0 +1,26 @@
+<form [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+  <label for="firstName">Nome:</label>
+  <input type="text" formControlName="firstName" name="firstName">
+  <span class="alert" *ngIf="cadastroForm.get('firstName')?.errors && (cadastroForm.get('firstName')?.touched || cadastroForm.get('firstName')?.dirty)">
+    Favor adicionar um nome
+  </span>
+  <br>
+  <br>
+  <label for="lastName">Sobrenome:</label>
+  <input type="text" formControlName="lastName" name="lastName">
+  <span class="alert" *ngIf="cadastroForm.get('lastName')?.errors && (cadastroForm.get('lastName')?.touched || cadastroForm.get('lastName')?.dirty)">
+    O Sobrenome deve ter exatamente {{cadastroForm.get('lastName')?.errors?.['minlength']?.requiredLength}} caracteres
+  </span>
+  <br>
+  <br>
+  <label for="email">Email:</label>
+  <input type="text" formControlName="email" name="email">
+  <p>
+  <!-- {{cadastroForm.get('firstName')?.errors | json}} --> <!--se existir, exibe-->
+  <!-- {{cadastroForm.get('firstName')?.touched | json}} -->
+  <!-- {{cadastroForm.get('firstName')?.dirty | json}} -->
+  <!--{{cadastroForm.get('lastName')?.errors | json}}-->
+  {{cadastroForm.get('email')?.errors | json}}
+  </p>
+  <button [disabled]="cadastroForm.invalid">Enviar</button>
+</form>
